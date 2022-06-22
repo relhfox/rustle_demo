@@ -13,3 +13,25 @@ a:hover{text-decoration:none;}
 ul li{list-style:none;}
 img{vertical-align:top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
+
+#root {
+    display: flex;
+}
+
+h1 {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 700px;
+}
+
+.post__body {
+    font-size: 18px;
+}
