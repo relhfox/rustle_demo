@@ -17,15 +17,22 @@ function App() {
     setPosts([newPost, ...posts])
   }
 
+  const removePost = (removingPost) => {
+    setPosts(posts.filter(post => post.id !== removingPost.id))
+  }
+
   return (
     <div className='container'>
 
       <PostForm create={createPost}/>
 
-      <PostsList posts={posts}/>
-      
+      {posts.length
+        ? <PostsList posts={posts} remove={removePost}/>
+        : <h1>No posts found...</h1>
+      }
+
     </div>
-  );
+  )
 }
 
 export default App;
