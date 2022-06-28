@@ -1,5 +1,3 @@
-import React from 'react'
-
 const MySelect = ({value, change, defaultValue, options}) => {
     return (
         <select value={value} onChange={event => change(event.target.value)}>
