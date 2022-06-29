@@ -9,11 +9,14 @@ const PostForm = ({create}) => {
     const addPost = (e) => {
         e.preventDefault()
 
-        const newPost = {id: Date.now(), ...post}
+        if (post.title && post.body) {
+            
+            const newPost = {id: Date.now(), ...post}
 
-        create(newPost)
+            create(newPost)
 
-        setPost({title: '', body: ''})
+            setPost({title: '', body: ''})
+        }
     }
 
     return (
