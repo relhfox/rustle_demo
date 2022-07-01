@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState } from 'react'
+import { usePosts } from './hooks/usePosts'
 import './styles/App.css'
 import PostsList from './components/PostsList'
 import PostForm from './components/PostForm'
@@ -20,23 +21,7 @@ function App() {
 
   const [modal, setModal] = useState(false)
 
-  const sortedPosts = useMemo(() => {
-    if (postFilter.sort) {
-
-      if (postFilter.sort === 'old') {
-        return [...posts].sort((a, b) => a.id - b.id)
-      } else if (postFilter.sort === 'new') {
-        return [...posts].sort((a, b) => b.id - a.id)
-      }
-    }
-
-    return posts
-
-  }, [postFilter.sort, posts])
-
-  const sortedSearchedPosts = useMemo(() => {
-    return sortedPosts.filter(post => post.title.toLowerCase().includes(postFilter.search.toLowerCase()) || post.body.toLowerCase().includes(postFilter.search.toLowerCase()))
-  }, [postFilter.search, sortedPosts])
+  const sortedSearchedPosts = usePosts(posts, postFilter.sort, postFilter.search)
 
   const createPost = (newPost) => {
     setPosts([newPost, ...posts].sort((a, b) => b.id - a.id))
