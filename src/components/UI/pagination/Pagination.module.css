@@ -1,0 +1,10 @@
+.page {
+    padding: 5px;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.page__current {
+    font-weight: bold;
+    background: grey;
+}
