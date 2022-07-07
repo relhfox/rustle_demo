@@ -1,24 +1,32 @@
-import React from 'react'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import { AuthContext } from './context'
 import './styles/App.css'
-import ServerPosts from './pages/ServerPosts'
-import PostComments from './pages/PostComments'
-import Error from './pages/Error'
+import NavBar from './components/NavBar'
+import MyRouter from './components/MyRouter'
 
 function App() {
 
-    return (
-        <BrowserRouter>
-        
-            <div className='container'>
-                <Routes>
-                    <Route path="/" element={<ServerPosts/>} />
-                    <Route path="/post/:id" element={<PostComments/>} />
-                    <Route path="*" element={<Error/>} />
-                </Routes>
-            </div>
+    const [isAuth, setIsAuth] = useState(false)
 
-        </BrowserRouter>
+    useEffect(() => {
+        if (localStorage.getItem('auth')) {
+            setIsAuth(true)
+        }
+    }, [])
+
+    return (
+        <AuthContext.Provider value={{isAuth, setIsAuth}}>
+            <BrowserRouter>
+
+                <NavBar />
+
+                <div className='container'>
+                    <MyRouter />
+                </div>
+
+            </BrowserRouter>
+        </AuthContext.Provider>
     )
 }
 

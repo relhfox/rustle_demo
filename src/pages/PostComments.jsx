@@ -49,7 +49,7 @@ const PostComments = () => {
                 ? <Loader/>
                 : <div>
                     {comments.map(comm =>
-                        <div>
+                        <div key={comm.id}>
                             <h2>{comm.email}</h2>
                             {comm.body}
                         </div>
