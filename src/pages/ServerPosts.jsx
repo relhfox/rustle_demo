@@ -36,7 +36,7 @@ const ServerPosts = () => {
 
     useEffect(() => {
         fetchPosts()
-    }, [currPage])
+    }, [postsLimit, currPage])
 
     const createPost = (newPost) => {
         setPosts([newPost, ...posts].sort((a, b) => b.id - a.id))
@@ -61,12 +61,41 @@ const ServerPosts = () => {
 
             {loadError && <h1>Oops! {loadError}...</h1>}
 
+            {sortedSearchedPosts.length
+                ? <h1>The latest posts</h1>
+                : <h1>No posts found...</h1>
+            }
+
+            {sortedSearchedPosts.length
+                ?
+                <Pagination
+                    totalPages={totalPages}
+                    currPage={currPage}
+                    setCurrPage={setCurrPage}
+                    limit={postsLimit}
+                    setLimit={setPostsLimit}
+                />
+                :
+                <span />
+            }
+
             {postsLoading
                 ? <Loader />
                 : <PostsList posts={sortedSearchedPosts} remove={removePost} />
             }
 
-            <Pagination totalPages={totalPages} currPage={currPage} setCurrPage={setCurrPage} />
+            {sortedSearchedPosts.length
+                ?
+                <Pagination
+                    totalPages={totalPages}
+                    currPage={currPage}
+                    setCurrPage={setCurrPage}
+                    limit={postsLimit}
+                    setLimit={setPostsLimit}
+                />
+                :
+                <span />
+            }
 
         </div>
     )
