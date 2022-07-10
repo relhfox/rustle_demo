@@ -41,6 +41,12 @@ h2 {
     font-size: 18px;
 }
 
+.trigger {
+    display: flex;
+    justify-content: center;
+    font-size: 80px;
+}
+
 /* ================================================== POSTS ANIMATION STYLES */
 
 .post-enter {
