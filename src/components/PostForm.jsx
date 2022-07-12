@@ -1,20 +1,31 @@
-import React, { useState } from 'react'
+import { useState, useEffect } from 'react'
 import MyInput from './UI/input/MyInput'
 import MyButton from './UI/button/MyButton'
 
-const PostForm = ({create}) => {
+const PostForm = ({create, toEdit, setToEdit}) => {
 
     const [post, setPost] = useState({title: '', body: ''})
 
+    useEffect(() => {
+        if (Object.keys(toEdit).length !== 0) {
+            setPost(toEdit)
+        }
+    }, [toEdit])
+    
     const addPost = (e) => {
         e.preventDefault()
 
         if (post.title && post.body) {
             
-            const newPost = {id: Date.now(), ...post}
+            if (Object.keys(toEdit).length !== 0) {
+                create(post)
+                setToEdit({})
 
-            create(newPost)
-
+            } else {
+                const newPost = {id: Date.now(), ...post}
+                create(newPost)
+            }
+            
             setPost({title: '', body: ''})
         }
     }

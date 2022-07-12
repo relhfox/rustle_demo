@@ -6,6 +6,7 @@ import EternalPosts from '../pages/EternalPosts'
 import PostComments from '../pages/PostComments'
 import Error from '../pages/Error'
 import Login from '../pages/Login'
+import Blog from '../pages/Blog'
 
 const MyRouter = () => {
     const {isAuth} = useContext(AuthContext)
@@ -15,8 +16,9 @@ const MyRouter = () => {
             {isAuth
                 ?
                 <Routes>
-                    <Route path="/" element={<ServerPosts/>} />
-                    <Route path="/e" element={<EternalPosts/>} />
+                    <Route path="/" element={<Blog/>} />
+                    <Route path="/jsonph" element={<ServerPosts/>} />
+                    <Route path="/endless" element={<EternalPosts/>} />
                     <Route path="/post/:id" element={<PostComments/>} />
                     <Route path="*" element={<Error/>} />
                 </Routes>

@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import MyButton from './UI/button/MyButton'
 
-const Post = ({post, remove}) => {
+const Post = ({post, remove, edit}) => {
     const navigate = useNavigate()
 
     return (
@@ -16,6 +16,10 @@ const Post = ({post, remove}) => {
             </div>
 
             <div className='post__buttons'>
+
+                <MyButton onClick={() => edit(post)}>
+                    Edit
+                </MyButton>
 
                 <MyButton onClick={() => navigate(`/post/${post.id}`)}>
                     Comments
