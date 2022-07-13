@@ -1,14 +1,14 @@
 import { useNavigate } from 'react-router-dom'
 import MyButton from './UI/button/MyButton'
 
-const Post = ({post, remove, edit}) => {
+const Post = ({post, remove, edit, isBlog}) => {
     const navigate = useNavigate()
 
     return (
         <div className='post'>
 
             <div className='post__header'>
-                <h2>{post.id} {post.title}</h2>
+                <h2>{!isBlog && <span>{post.id}.</span>} {post.title}</h2>
             </div>
 
             <div className='post__body'>
@@ -17,13 +17,17 @@ const Post = ({post, remove, edit}) => {
 
             <div className='post__buttons'>
 
-                <MyButton onClick={() => edit(post)}>
-                    Edit
-                </MyButton>
+                {isBlog &&
+                    <MyButton onClick={() => edit(post)}>
+                        Edit
+                    </MyButton>
+                }
 
-                <MyButton onClick={() => navigate(`/post/${post.id}`)}>
-                    Comments
-                </MyButton>
+                {!isBlog &&
+                    <MyButton onClick={() => navigate(`/post/${post.id}`)}>
+                        Comments
+                    </MyButton>
+                }
 
                 <MyButton onClick={() => remove(post)}>
                     Delete

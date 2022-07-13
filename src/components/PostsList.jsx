@@ -1,7 +1,7 @@
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import Post from './Post'
 
-const PostsList = ({posts, remove, edit}) => {
+const PostsList = ({posts, remove, edit, isBlog}) => {
 
     return (
         <div className='posts_list'>
@@ -12,7 +12,7 @@ const PostsList = ({posts, remove, edit}) => {
                         timeout={500}
                         classNames="post"
                     >
-                        <Post post={post} remove={remove} edit={edit} />
+                        <Post post={post} remove={remove} edit={edit} isBlog={isBlog} />
                     </CSSTransition>
                 )}
             </TransitionGroup>

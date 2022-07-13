@@ -16,8 +16,8 @@ const Login = () => {
         <div>
             <h1>Login</h1>
             <form onSubmit={authorize}>
-                <MyInput type='text' value='SpongeBob' />
-                <MyInput type='password' value='squarepants' />
+                <MyInput type='text' defaultValue='SpongeBob' />
+                <MyInput type='password' defaultValue='squarepants' />
                 <MyButton>Just push it!</MyButton>
             </form>
         </div>

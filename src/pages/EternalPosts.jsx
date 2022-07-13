@@ -6,6 +6,7 @@ import PostService from '../API/PostService'
 import PostsList from '../components/PostsList'
 import PostsFilter from '../components/PostsFilter'
 import Loader from '../components/UI/loader/Loader'
+import PostsHeader from '../components/PostsHeader'
 
 const EternalPosts = () => {
     
@@ -71,12 +72,9 @@ const EternalPosts = () => {
 
             {loadError && <h1>Oops! {loadError}...</h1>}
 
-            {sortedSearchedPosts.length
-                ? <h1>The latest posts</h1>
-                : <h1>No posts found...</h1>
-            }
+            <PostsHeader posts={sortedSearchedPosts} />
 
-            <PostsList posts={sortedSearchedPosts} remove={removePost} />
+            <PostsList posts={sortedSearchedPosts} remove={removePost} isBlog={false} />
 
             <div ref={triggerDiv} className='trigger'>
                 RABBIT

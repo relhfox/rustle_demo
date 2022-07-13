@@ -5,6 +5,7 @@ import PostForm from '../components/PostForm'
 import PostsFilter from '../components/PostsFilter'
 import MyModal from '../components/UI/modal/MyModal'
 import MyButton from '../components/UI/button/MyButton'
+import PostsHeader from '../components/PostsHeader'
 
 const Blog = () => {
     
@@ -49,12 +50,9 @@ const Blog = () => {
 
             <PostsFilter filter={postFilter} setFilter={setPostFilter} />
 
-            {sortedSearchedPosts.length
-                ? <h1>The latest posts</h1>
-                : <h1>No posts found...</h1>
-            }
+            <PostsHeader posts={sortedSearchedPosts} />
 
-            <PostsList posts={sortedSearchedPosts} remove={removePost} edit={editPost} />
+            <PostsList posts={sortedSearchedPosts} remove={removePost} edit={editPost} isBlog={true} />
 
         </div>
     )
