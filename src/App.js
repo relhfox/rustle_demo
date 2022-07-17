@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import { AuthContext } from './context'
 import './styles/App.css'
-import NavBar from './components/NavBar'
 import MyRouter from './components/MyRouter'
+import MyHeader from './components/MyHeader'
+import MyFooter from './components/MyFooter'
 
 function App() {
 
@@ -19,11 +20,15 @@ function App() {
         <AuthContext.Provider value={{isAuth, setIsAuth}}>
             <BrowserRouter>
 
-                <NavBar />
+                <MyHeader />
 
-                <div className='container'>
-                    <MyRouter />
+                <div className='main'>
+                    <div className='container'>
+                        <MyRouter />
+                    </div>
                 </div>
+
+                <MyFooter />
 
             </BrowserRouter>
         </AuthContext.Provider>

@@ -16,6 +16,9 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
 
 #root {
     display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background: #F7DC6F;
 }
 
 h1 {
@@ -26,6 +29,10 @@ h1 {
 h2 {
     font-size: 25px;
     font-weight: bold;
+}
+
+.main {
+    flex: 1 1 auto;
 }
 
 .container {
