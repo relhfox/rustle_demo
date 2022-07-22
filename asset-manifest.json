@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/rustle_demo/static/css/main.4bb04697.css",
+    "main.js": "/rustle_demo/static/js/main.7e29376f.js",
+    "index.html": "/rustle_demo/index.html",
+    "main.4bb04697.css.map": "/rustle_demo/static/css/main.4bb04697.css.map",
+    "main.7e29376f.js.map": "/rustle_demo/static/js/main.7e29376f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4bb04697.css",
+    "static/js/main.7e29376f.js"
+  ]
+}
