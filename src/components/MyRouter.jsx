@@ -20,6 +20,7 @@ const MyRouter = () => {
                     <Route path="/jsonph" element={<ServerPosts/>} />
                     <Route path="/endless" element={<EternalPosts/>} />
                     <Route path="/post/:id" element={<PostComments/>} />
+                    <Route path="/rustle_demo" element={<Blog/>} />
                     <Route path="*" element={<Error/>} />
                 </Routes>
                 :
@@ -28,6 +29,7 @@ const MyRouter = () => {
                     <Route path="/jsonph" element={<Login/>} />
                     <Route path="/endless" element={<Login/>} />
                     <Route path="/post/:id" element={<Login/>} />
+                    <Route path="/rustle_demo" element={<Login/>} />
                     <Route path="*" element={<Error/>} />
                 </Routes>
             }
