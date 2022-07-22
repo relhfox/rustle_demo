@@ -14,44 +14,168 @@ ul li{list-style:none;}
 img{vertical-align:top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
 
+/* ================================================== BASIC STYLES */
+
+.link a:link {color: #000;}
+.link a:visited {color: #000;}
+.link a:focus {color: #000;}
+.link a:hover {color: #000; text-decoration: underline;}
+.link a:active {color: #000;}
+
 #root {
     display: flex;
     flex-direction: column;
+    align-items: center;
     min-height: 100%;
-    background: #F7DC6F;
+    background: #3FB3FF;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 h1 {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: bold;
 }
 
 h2 {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 }
 
+.header,
+.footer,
+.postlist_header,
+.post,
+.trigger,
+.login {
+    background: #FCFF4D;
+}
+
+/* ================================================== HEADER STYLES */
+
+.header,
+.footer {
+    min-width: 80%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logo a:hover {
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    font-size: 16px;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+/* ================================================== MAIN CONTENT STYLES */
+
 .main {
+    max-width: 800px;
     flex: 1 1 auto;
 }
 
-.container {
-    max-width: 700px;
+.posts_filter {
+    display: flex;
+    justify-content: flex-end;
 }
 
-.post {
-    border: 2px solid;
-    margin: 3px 0;
+.postlist_header {
+    min-width: 100%;
+    padding: 5px 9px;
+    margin: 7px 0;
+    border-radius: 8px;
+}
+
+.disclaimer {
+    line-height: 17px;
+    font-size: 15px;
+}
+
+.newpost {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post_form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ================================================== POST STYLES */
+
+.post,
+.trigger {
+    padding: 9px;
+    margin: 7px 0;
+    border-radius: 8px;
 }
 
 .post__body {
-    font-size: 18px;
+    margin: 8px 0 0 0;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.post__buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin: 8px 0 0 0;
 }
 
 .trigger {
     display: flex;
     justify-content: center;
     font-size: 80px;
+}
+
+/* ================================================== LOGIN STYLES */
+
+.login__page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login {
+    max-width: 254px;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 15px 0 0 0;
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login__input {
+    margin: 0 0 15px 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
+.footer a {
+    margin: 0 8px;
 }
 
 /* ================================================== POSTS ANIMATION STYLES */

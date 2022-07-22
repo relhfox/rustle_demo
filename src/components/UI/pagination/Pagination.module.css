@@ -1,10 +1,32 @@
+.pages {
+    display: flex;
+}
+
+.pages__head,
+.pages__pagi {
+    background: #FCFF4D;
+    border-radius: 6px;
+    padding: 1px 5px;
+    margin: 0 8px 0 0;
+}
+
+.pages__pagi {
+    display: flex;
+}
+
 .page {
-    padding: 5px;
-    border: 1px solid;
+    border: none;
+    border-radius: 4px;
+    background-color: #0074c0;
+    padding: 4px 5px;
+    margin: 2px;
+    color: white;
+    text-align: center;
     cursor: pointer;
 }
 
 .page__current {
-    font-weight: bold;
-    background: grey;
+    border: 1px solid black;
+    background: #FCFF4D;
+    color: #000;
 }

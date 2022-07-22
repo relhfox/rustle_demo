@@ -1,3 +1,9 @@
 .myBttn {
-    border: 1px solid;
+    border: none;
+    border-radius: 4px;
+    background-color: #0074c0;
+    padding: 4px 8px;
+    margin: 2px;
+    color: white;
+    text-align: center;
 }

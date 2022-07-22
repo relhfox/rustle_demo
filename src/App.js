@@ -23,9 +23,7 @@ function App() {
                 <MyHeader />
 
                 <div className='main'>
-                    <div className='container'>
-                        <MyRouter />
-                    </div>
+                    <MyRouter />
                 </div>
 
                 <MyFooter />

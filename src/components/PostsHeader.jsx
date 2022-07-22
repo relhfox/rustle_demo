@@ -1,6 +1,6 @@
 const PostsHeader = ({posts}) => {
     return (
-        <div>
+        <div className="postlist_header">
             {posts.length
                 ? <h1>The latest posts</h1>
                 : <h1>No posts found...</h1>

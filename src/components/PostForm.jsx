@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import MyInput from './UI/input/MyInput'
+import MyTextArea from './UI/textarea/MyTextArea'
 import MyButton from './UI/button/MyButton'
 
 const PostForm = ({create, toEdit, setToEdit}) => {
@@ -31,24 +32,26 @@ const PostForm = ({create, toEdit, setToEdit}) => {
     }
 
     return (
-        <form>
+        <form className='post_form'>
 
             <MyInput
                 type='text'
                 value={post.title}
                 onChange={e => setPost({...post, title: e.target.value})}
                 placeholder='Post title...'
+                size='30'
             />
 
-            <MyInput
-                type='text'
+            <MyTextArea
                 value={post.body}
                 onChange={e => setPost({...post, body: e.target.value})}
                 placeholder='Post text...'
             />
 
-            <MyButton onClick={addPost}>Submit</MyButton>
-
+            <div>
+                <MyButton onClick={addPost}>Submit</MyButton>
+            </div>
+            
         </form>
     )
 }

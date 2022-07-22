@@ -29,29 +29,51 @@ const PostComments = () => {
 
     return (
         <div>
-            {error && <h1>Oops! {error}...</h1>}
+
+            {error &&
+                <div className="postlist_header">
+                    <h1>Oops! {error}...</h1>
+                </div>
+            }
 
             {loading
                 ? <Loader/>
-                : <div>
-                    <h1>{post.title}</h1>
-                    <div>
+                : <div className='post'>
+
+                    <div className="post__header">
+                        <h1>{post.id}. {post.title}</h1>
+                    </div>
+
+                    <div className='post__body'>
                         {post.body}
                     </div>
                 </div>
             }
 
-            <h1>comments:</h1>
+            <div className="postlist_header">
+                <h2>comments:</h2>
+            </div>
 
-            {commError && <h1>Oops! {commError}...</h1>}
+            {commError &&
+                <div className="postlist_header">
+                    <h2>Oops! {commError}...</h2>
+                </div>
+            }
 
             {commLoading
                 ? <Loader/>
                 : <div>
                     {comments.map(comm =>
-                        <div key={comm.id}>
-                            <h2>{comm.email}</h2>
-                            {comm.body}
+                        <div className='post' key={comm.id}>
+
+                            <div className="post__header">
+                                <h2>{comm.email}</h2>
+                            </div>
+
+                            <div className='post__body'>
+                                {comm.body}
+                            </div>
+
                         </div>
                     )}
                 </div>

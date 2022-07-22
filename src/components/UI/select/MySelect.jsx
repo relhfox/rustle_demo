@@ -1,6 +1,8 @@
+import styles from './MySelect.module.css'
+
 const MySelect = ({value, change, defaultValue, options}) => {
     return (
-        <select value={value} onChange={event => change(event.target.value)}>
+        <select className={styles.MySelect} value={value} onChange={event => change(event.target.value)}>
 
             <option disabled value=''>{defaultValue}</option>
 

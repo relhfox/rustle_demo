@@ -41,9 +41,17 @@ const ServerPosts = () => {
     return (
         <div>
 
+            <div className="postlist_header disclaimer">
+                Bored with blogging? Plunge into mysterious ancient Latin knowledge, that download here directly from jsonplaceholder.typicode.com! Use and customize the pages buttons. Oh, and don't forget to check the comments!
+            </div>
+
             <PostsFilter filter={postFilter} setFilter={setPostFilter} />
 
-            {loadError && <h1>Oops! {loadError}...</h1>}
+            {loadError &&
+                <div className="postlist_header">
+                    <h1>Oops! {loadError}...</h1>
+                </div>
+            }
 
             <PostsHeader posts={sortedSearchedPosts} />
 

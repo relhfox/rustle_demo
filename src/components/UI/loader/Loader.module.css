@@ -1,8 +1,14 @@
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 0 0;
+}
+
 .loader {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    border: 10px dashed blue;
+    border: 10px dashed #FCFF4D;
     animation: rotate 3s infinite linear;
 }
 

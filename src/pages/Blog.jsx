@@ -42,13 +42,19 @@ const Blog = () => {
     return (
         <div>
 
-            <MyButton onClick={() => setModal(true)}>New post</MyButton>
-
             <MyModal visible={modal} setVisible={setModal}>
                 <PostForm create={createPost} toEdit={editingPost} setToEdit={setEditingPost} />
             </MyModal>
 
-            <PostsFilter filter={postFilter} setFilter={setPostFilter} />
+            <div className="postlist_header disclaimer">
+                Now, imagine you're a famous blogger! Feel free to create a new posts, edit, and remove those! Indulge yourself, take your time!
+            </div>
+
+            <div className='newpost'>
+                <MyButton onClick={() => setModal(true)}>New post</MyButton>
+
+                <PostsFilter filter={postFilter} setFilter={setPostFilter} />
+            </div>
 
             <PostsHeader posts={sortedSearchedPosts} />
 

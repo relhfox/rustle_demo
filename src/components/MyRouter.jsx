@@ -25,6 +25,8 @@ const MyRouter = () => {
                 :
                 <Routes>
                     <Route path="/" element={<Login/>} />
+                    <Route path="/jsonph" element={<Login/>} />
+                    <Route path="/endless" element={<Login/>} />
                     <Route path="/post/:id" element={<Login/>} />
                     <Route path="*" element={<Error/>} />
                 </Routes>

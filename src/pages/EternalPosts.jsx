@@ -68,9 +68,17 @@ const EternalPosts = () => {
     return (
         <div>
 
+            <div className="postlist_header disclaimer">
+                And finally, as for the icing on the cake, here's the endless feed. Test your scrolling skills! Try to catch the rabbit!
+            </div>
+
             <PostsFilter filter={postFilter} setFilter={setPostFilter} />
 
-            {loadError && <h1>Oops! {loadError}...</h1>}
+            {loadError &&
+                <div className="postlist_header">
+                    <h1>Oops! {loadError}...</h1>
+                </div>
+            }
 
             <PostsHeader posts={sortedSearchedPosts} />
 

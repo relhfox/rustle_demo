@@ -5,13 +5,14 @@
     right: 0;
     left: 0;
     display: none;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .myModalContent {
-    background: white;
+    background: #FCFF4D;
     min-width: 300px;
-    padding: 50px;
+    border-radius: 15px;
+    padding: 25px;
 }
 
 .myModal.active {

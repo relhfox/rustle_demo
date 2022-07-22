@@ -3,7 +3,7 @@ import MySelect from './UI/select/MySelect'
 
 const PostsFilter = ({filter, setFilter}) => {
     return (
-        <div>
+        <div className='posts_filter'>
             <MyInput
                 value={filter.search}
                 onChange={e => setFilter({...filter, search: e.target.value})}
